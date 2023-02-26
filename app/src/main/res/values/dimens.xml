@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="between">8dp</dimen>
+
+    <dimen name="image_corner_radius">8dp</dimen>
+
+    <dimen name="big_banner_height">144dp</dimen>
+    <dimen name="big_banner_image_height">100dp</dimen>
+    <dimen name="big_banner_image_width">100dp</dimen>
+
+    <dimen name="small_banner_height">80dp</dimen>
+    <dimen name="small_banner_image_height">80dp</dimen>
+    <dimen name="small_banner_image_width">80dp</dimen>
+    <dimen name="small_banner_text_horizontal_padding">8dp</dimen>
+    <dimen name="small_banner_text_vertical_padding">8dp</dimen>
+    <dimen name="small_banner_text_between_padding">8dp</dimen>
+
+    <dimen name="primary_font_size">16sp</dimen>
+    <dimen name="secondary_font_size">12sp</dimen>
+</resources>

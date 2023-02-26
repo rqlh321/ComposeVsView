@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_custom_view">
+
+    <fragment
+        android:id="@+id/navigation_custom_view"
+        android:name="com.example.composevsview.ui.view.CustomViewFragment"
+        android:label="@string/title_custom_view" />
+
+    <fragment
+        android:id="@+id/navigation_combined"
+        android:name="com.example.composevsview.ui.combine.CombinedFragment"
+        android:label="@string/title_combined" />
+
+    <fragment
+        android:id="@+id/navigation_compose"
+        android:name="com.example.composevsview.ui.compose.ComposeFragment"
+        android:label="@string/title_compose" />
+
+    <fragment
+        android:id="@+id/navigation_bind"
+        android:name="com.example.composevsview.ui.bind.BindFragment"
+        android:label="@string/title_bind" />
+
+    <fragment
+        android:id="@+id/navigation_litho"
+        android:name="com.example.composevsview.ui.litho.LithoFragment"
+        android:label="@string/title_litho" />
+</navigation>
