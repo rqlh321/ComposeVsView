@@ -5,27 +5,26 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.composevsview.MainViewModel
 import com.example.composevsview.R
-import com.example.composevsview.common.model.SmallBanner
 
 @Composable
-fun Banners(items: List<SmallBanner>) {
-    val listState = rememberLazyListState()
-    val coroutineScope = rememberCoroutineScope()
-
+fun ComposeScreen(
+    viewModel: MainViewModel = hiltViewModel()
+) {
+    val smallBanners = viewModel.smallBanners.observeAsState()
     LazyColumn(
-        state = listState,
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.between)),
         contentPadding = PaddingValues(dimensionResource(R.dimen.padding)),
         modifier = Modifier.fillMaxHeight()
     ) {
         items(
-            items = items,
+            items = smallBanners.value?: emptyList(),
             contentType = { it::class },
             key = { it.id },
         ) {

@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.composevsview"
-        minSdk 24
+        minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -32,9 +32,14 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        benchmark {
+            signingConfig signingConfigs.debug
+            matchingFallbacks = ['release']
+            debuggable false
+            proguardFiles('benchmark-rules.pro')
+        }
     }
     compileOptions {
-
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -52,17 +57,19 @@ android {
 }
 
 dependencies {
-
+    implementation "androidx.profileinstaller:profileinstaller:1.2.2"
     implementation 'androidx.core:core-ktx:1.9.0'
-
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
-
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+    implementation 'androidx.hilt:hilt-navigation-fragment:1.0.0'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
     implementation 'com.github.bumptech.glide:glide:4.14.2'
 
@@ -73,6 +80,8 @@ dependencies {
     implementation 'androidx.compose.foundation:foundation'
     implementation 'androidx.compose.ui:ui'
     implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation "androidx.compose.runtime:runtime-livedata"
+
     implementation "io.coil-kt:coil-compose:2.2.2"
     debugImplementation 'androidx.compose.ui:ui-tooling'
 
@@ -84,10 +93,8 @@ dependencies {
     implementation 'com.facebook.litho:litho-live-data-kotlin:0.47.0'
     implementation 'com.facebook.litho:litho-fresco:0.47.0'
     implementation 'com.facebook.fresco:fresco:1.13.0'
-
-    kapt 'com.facebook.litho:litho-processor:0.47.0'
-    // SoLoader
     implementation 'com.facebook.soloader:soloader:0.10.4'
+    kapt 'com.facebook.litho:litho-processor:0.47.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
