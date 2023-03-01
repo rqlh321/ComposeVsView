@@ -17,12 +17,9 @@ class MainViewModel : ViewModel() {
 
     init {
         viewModelScope.launch(Dispatchers.Default) {
-//            while (true) {
             mutableSmallBanners.postValue(
                 (1..1000).map { SmallBanner(id = it.toString()) }
             )
-//                delay(1000)
-//            }
         }
     }
 }
