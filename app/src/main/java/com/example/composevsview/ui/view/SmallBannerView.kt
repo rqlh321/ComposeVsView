@@ -7,7 +7,6 @@ import android.text.Layout
 import android.text.SpannableStringBuilder
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.core.content.ContextCompat
@@ -18,7 +17,7 @@ class SmallBannerView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : View(context, attrs, defStyleAttr) {
+) : DebugableView(context, attrs, defStyleAttr) {
 
     private val bannerHeight = resources.getDimension(R.dimen.small_banner_height)
 
@@ -66,6 +65,16 @@ class SmallBannerView @JvmOverloads constructor(
         style = Paint.Style.STROKE
         textSize = resources.getDimension(R.dimen.secondary_font_size)
         color = ContextCompat.getColor(context, R.color.secondary_text)
+    }
+
+    private val translateXForSubtitle by lazy { imageWidth + textHorizontalPadding }
+    private val translateYForTitle by lazy { subtitleLayout.height.toFloat() + textBetweenPadding }
+
+    init {
+        layoutParams = ViewGroup.LayoutParams(
+            MATCH_PARENT,
+            bannerHeight.toInt()
+        )
     }
 
     private val emptyBitmap = Bitmap.createBitmap(
@@ -122,17 +131,8 @@ class SmallBannerView @JvmOverloads constructor(
         image = emptyBitmap
     }
 
-    init {
-        layoutParams = ViewGroup.LayoutParams(
-            MATCH_PARENT,
-            bannerHeight.toInt()
-        )
-    }
-
-    private val translateXForSubtitle by lazy { imageWidth + textHorizontalPadding }
-    private val translateYForTitle by lazy { subtitleLayout.height.toFloat() + textBetweenPadding }
-
     override fun onDraw(canvas: Canvas) {
+        canvas.save()
         canvas.drawBitmap(image, 0f, 0f, null)
 
         canvas.translate(translateXForSubtitle, textVerticalPadding)
@@ -140,5 +140,6 @@ class SmallBannerView @JvmOverloads constructor(
 
         canvas.translate(0f, translateYForTitle)
         titleLayout.draw(canvas)
+        super.onDraw(canvas)
     }
 }
