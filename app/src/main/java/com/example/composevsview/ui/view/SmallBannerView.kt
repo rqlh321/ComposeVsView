@@ -11,13 +11,14 @@ import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.core.content.ContextCompat
 import com.example.composevsview.R
+import com.example.composevsview.common.DesignComponent
 
 
 class SmallBannerView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : DebugableView(context, attrs, defStyleAttr) {
+) : DesignComponent(context, attrs, defStyleAttr) {
 
     private val bannerHeight = resources.getDimension(R.dimen.small_banner_height)
 

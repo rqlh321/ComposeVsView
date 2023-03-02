@@ -1,26 +1,22 @@
-package com.example.composevsview.ui.view
+package com.example.composevsview.common
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.LayerDrawable
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.composevsview.R
-import com.example.composevsview.ui.view.adapter.TextDrawable
+import com.example.composevsview.ui.view.adapter.InfoDrawable
 
-abstract class DebugableView @JvmOverloads constructor(
+abstract class DesignComponent @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private val info = LayerDrawable(
-        arrayOf(
-            ColorDrawable(ContextCompat.getColor(context, R.color.debug_view)),
-            TextDrawable(this::class.java.simpleName)
-        )
+    private val info = InfoDrawable(
+        name = this::class.java.simpleName,
+        backgroundColor = ContextCompat.getColor(context, R.color.debug_view)
     )
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {

@@ -39,6 +39,19 @@ android {
             proguardFiles('benchmark-rules.pro')
         }
     }
+    flavorDimensions "version"
+    productFlavors {
+        design {
+            dimension "version"
+            applicationIdSuffix ".design"
+            versionNameSuffix "-design"
+        }
+        regular {
+            dimension "version"
+            applicationIdSuffix ".regular"
+            versionNameSuffix "-regular"
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
