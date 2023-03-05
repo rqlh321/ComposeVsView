@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.composevsview.ui.compose.element.ComposeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,6 +17,6 @@ class ComposeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) = ComposeView(requireContext()).apply {
-        setContent { ComposeScreen() }
+        setContent { ComposeScreen(hiltViewModel(requireActivity())) }
     }
 }

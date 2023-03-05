@@ -1,4 +1,4 @@
-package com.example.composevsview.ui.view
+package com.example.composevsview.ui.view.banner
 
 import android.content.Context
 import android.graphics.*
@@ -133,7 +133,6 @@ class SmallBannerView @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas) {
-        canvas.save()
         canvas.drawBitmap(image, 0f, 0f, null)
 
         canvas.translate(translateXForSubtitle, textVerticalPadding)
@@ -141,6 +140,5 @@ class SmallBannerView @JvmOverloads constructor(
 
         canvas.translate(0f, translateYForTitle)
         titleLayout.draw(canvas)
-        super.onDraw(canvas)
     }
 }

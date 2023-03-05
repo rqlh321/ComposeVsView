@@ -8,4 +8,7 @@ data class BigBanner(
     val subtitle: String = "Position $id",
     val iconFrontUrl: String = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png",
     val iconBackUrl: String = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/$id.png",
-):Banner()
+) : Banner() {
+    override fun viewType() = BIG_BANNER_VIEW_TYPE
+
+}

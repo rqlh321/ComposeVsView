@@ -12,23 +12,28 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.composevsview.MainViewModel
 import com.example.composevsview.R
+import com.example.composevsview.common.model.BigBanner
+import com.example.composevsview.common.model.SmallBanner
 
 @Composable
 fun ComposeScreen(
     viewModel: MainViewModel = hiltViewModel()
 ) {
-    val smallBanners = viewModel.smallBanners.observeAsState()
+    val banners = viewModel.banners.observeAsState()
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.between)),
         contentPadding = PaddingValues(dimensionResource(R.dimen.padding)),
         modifier = Modifier.fillMaxHeight()
     ) {
         items(
-            items = smallBanners.value?: emptyList(),
+            items = banners.value ?: emptyList(),
             contentType = { it::class },
             key = { it.id },
         ) {
-            SmallBannerCompose(it)
+            when (it) {
+                is SmallBanner -> SmallBannerCompose(it)
+                is BigBanner -> BigBannerCompose(it)
+            }
         }
     }
 }

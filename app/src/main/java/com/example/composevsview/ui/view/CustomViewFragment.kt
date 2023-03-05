@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.composevsview.MainViewModel
 import com.example.composevsview.R
-import com.example.composevsview.ui.view.adapter.ContactAdapter
+import com.example.composevsview.ui.view.adapter.BannerAdapter
 import com.example.composevsview.common.SpacingDecoration
 
 class CustomViewFragment : Fragment() {
 
-    private val contactAdapter = ContactAdapter()
+    private val bannerAdapter = BannerAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +23,7 @@ class CustomViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ) = RecyclerView(requireContext()).apply {
         layoutManager = LinearLayoutManager(context)
-        adapter = contactAdapter
+        adapter = bannerAdapter
         val big = resources.getDimensionPixelOffset(R.dimen.padding)
         val small = resources.getDimensionPixelOffset(R.dimen.between)
         addItemDecoration(SpacingDecoration(small = small, big = big))
@@ -31,6 +31,6 @@ class CustomViewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
-        mainViewModel.smallBanners.observe(viewLifecycleOwner, contactAdapter::submitList)
+        mainViewModel.banners.observe(viewLifecycleOwner, bannerAdapter::submitList)
     }
 }

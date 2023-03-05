@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.ListAdapter
-import com.example.composevsview.common.BannerPayloadDifUtil
+import com.example.composevsview.common.SmallBannerPayloadDifUtil
 import com.example.composevsview.common.model.SmallBanner
 import com.example.composevsview.databinding.ItemBindingBinding
 
 class BindAdapter : ListAdapter<SmallBanner, BindViewHolder>(
-    AsyncDifferConfig.Builder(BannerPayloadDifUtil).build()
+    AsyncDifferConfig.Builder(SmallBannerPayloadDifUtil).build()
 ) {
     override fun onCreateViewHolder(
         parent: ViewGroup,

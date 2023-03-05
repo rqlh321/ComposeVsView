@@ -1,4 +1,4 @@
-package com.example.composevsview.ui.view.adapter
+package com.example.composevsview.common
 
 import android.graphics.*
 import android.graphics.drawable.Drawable
@@ -11,8 +11,6 @@ class InfoDrawable(
     private val paint: Paint = Paint()
 
     private val textWidth: Float
-    private val drawableWidth by lazy { bounds.width() }
-    private val drawableHeight by lazy { bounds.height() }
 
     init {
         paint.color = Color.WHITE

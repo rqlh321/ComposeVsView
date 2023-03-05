@@ -7,4 +7,6 @@ data class SmallBanner(
     override val title: String = UUID.randomUUID().toString(),
     val subtitle: String = "Position $id",
     val iconUrl: String = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png",
-):Banner()
+) : Banner() {
+    override fun viewType() = SMALL_BANNER_VIEW_TYPE
+}

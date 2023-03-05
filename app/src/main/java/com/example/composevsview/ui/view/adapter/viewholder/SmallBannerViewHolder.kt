@@ -1,18 +1,17 @@
-package com.example.composevsview.ui.view.adapter
+package com.example.composevsview.ui.view.adapter.viewholder
 
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.composevsview.common.model.SmallBanner
 import com.example.composevsview.ui.view.SmallBannerBitmapTarget
-import com.example.composevsview.ui.view.SmallBannerView
+import com.example.composevsview.ui.view.banner.SmallBannerView
 
-class ContactViewHolder(
+class SmallBannerViewHolder(
     private val view: SmallBannerView
-) : RecyclerView.ViewHolder(view) {
+) : BannerViewHolder<SmallBanner>(view) {
 
     private val target = SmallBannerBitmapTarget(view)
 
-    fun bind(item: SmallBanner) {
+    override fun bind(item: SmallBanner) {
         view.setText(item.title, item.subtitle)
         view.clearIcon()
 
@@ -24,7 +23,7 @@ class ContactViewHolder(
             .into(target)
     }
 
-    fun changeTitle(title: String) {
+    override fun changeTitle(title: String) {
         view.setTitle(title)
     }
 }
