@@ -25,7 +25,7 @@ class CombinedFragment : Fragment() {
         layoutManager = LinearLayoutManager(context)
         adapter = contactAdapter
         val big = resources.getDimensionPixelOffset(R.dimen.padding)
-        val small = resources.getDimensionPixelOffset(R.dimen.between)
+        val small = resources.getDimensionPixelOffset(R.dimen.item_spacing)
         addItemDecoration(SpacingDecoration(small = small, big = big))
     }
 

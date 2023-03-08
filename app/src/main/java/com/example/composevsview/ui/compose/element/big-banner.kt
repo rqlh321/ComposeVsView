@@ -50,12 +50,12 @@ fun BigBannerCompose(item: BigBanner) {
         }
         Text(
             text = item.subtitle,
-            color = colorResource(R.color.secondary_text),
+            color = colorResource(R.color.secondary_color),
             fontSize = dimensionResource(R.dimen.secondary_font_size).value.sp,
         )
         Text(
             text = item.title,
-            color = colorResource(R.color.primary_text),
+            color = colorResource(R.color.primary_color),
             fontSize = dimensionResource(R.dimen.primary_font_size).value.sp,
         )
     }

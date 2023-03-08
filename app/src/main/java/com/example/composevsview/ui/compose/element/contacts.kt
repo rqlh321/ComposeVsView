@@ -21,7 +21,7 @@ fun ComposeScreen(
 ) {
     val banners = viewModel.banners.observeAsState()
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.between)),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.item_spacing)),
         contentPadding = PaddingValues(dimensionResource(R.dimen.padding)),
         modifier = Modifier.fillMaxHeight()
     ) {

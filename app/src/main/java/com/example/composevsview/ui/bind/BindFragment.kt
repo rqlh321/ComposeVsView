@@ -17,7 +17,7 @@ class BindFragment : Fragment(R.layout.fragment_bind) {
         val binding = FragmentBindBinding.bind(view)
         binding.root.adapter = bindAdapter
         val big = resources.getDimensionPixelOffset(R.dimen.padding)
-        val small = resources.getDimensionPixelOffset(R.dimen.between)
+        val small = resources.getDimensionPixelOffset(R.dimen.item_spacing)
         binding.root.addItemDecoration(SpacingDecoration(small = small, big = big))
 
         val mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]

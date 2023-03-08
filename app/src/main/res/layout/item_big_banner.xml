@@ -20,19 +20,17 @@
 
     <TextView
         android:id="@+id/subtitle_id"
+        style="@style/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/secondary_text"
-        android:textSize="@dimen/secondary_font_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/left_image_id" />
 
     <TextView
         android:id="@+id/title_id"
+        style="@style/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="@dimen/primary_font_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtitle_id" />
 </merge>

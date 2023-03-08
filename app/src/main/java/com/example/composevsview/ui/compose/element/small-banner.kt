@@ -45,14 +45,14 @@ fun SmallBannerCompose(item: SmallBanner) {
         ) {
             Text(
                 text = item.subtitle,
-                color = colorResource(R.color.secondary_text),
+                color = colorResource(R.color.secondary_color),
                 fontSize = dimensionResource(R.dimen.secondary_font_size).value.sp,
             )
             Text(
                 modifier = Modifier
-                    .padding(top = dimensionResource(R.dimen.small_banner_text_between_padding)),
+                    .padding(top = dimensionResource(R.dimen.small_banner_text_spacing)),
                 text = item.title,
-                color = colorResource(R.color.primary_text),
+                color = colorResource(R.color.primary_color),
                 fontSize = dimensionResource(R.dimen.primary_font_size).value.sp,
             )
         }

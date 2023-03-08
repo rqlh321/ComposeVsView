@@ -2,6 +2,7 @@ package com.example.composevsview.ui.view.banner
 
 import android.content.Context
 import android.graphics.*
+import android.os.Build
 import android.text.DynamicLayout
 import android.text.Layout
 import android.text.SpannableStringBuilder
@@ -10,6 +11,7 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.example.composevsview.R
 import com.example.composevsview.common.DesignComponent
 
@@ -28,7 +30,7 @@ class SmallBannerView @JvmOverloads constructor(
 
     private val textHorizontalPadding = resources.getDimension(R.dimen.small_banner_text_horizontal_padding)
     private val textVerticalPadding = resources.getDimension(R.dimen.small_banner_text_vertical_padding)
-    private val textBetweenPadding = resources.getDimension(R.dimen.small_banner_text_between_padding)
+    private val textBetweenPadding = resources.getDimension(R.dimen.small_banner_text_spacing)
 
     private val titleLayout by lazy {
         DynamicLayout(
@@ -46,7 +48,15 @@ class SmallBannerView @JvmOverloads constructor(
     private val titleTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         textSize = resources.getDimension(R.dimen.primary_font_size)
-        color = ContextCompat.getColor(context, R.color.primary_text)
+        color = ContextCompat.getColor(context, R.color.primary_color)
+
+        val typeface = if (Build.VERSION.SDK_INT >= 28) {
+            val typefaceA = ResourcesCompat.getFont(context, R.font.main_font_family)
+            Typeface.create(typefaceA, 700, false)
+        } else {
+            ResourcesCompat.getFont(context, R.font.big_bad_robot)
+        }
+        setTypeface(typeface)
     }
 
     private val subtitleLayout by lazy {
@@ -65,7 +75,14 @@ class SmallBannerView @JvmOverloads constructor(
     private val subtitleTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         textSize = resources.getDimension(R.dimen.secondary_font_size)
-        color = ContextCompat.getColor(context, R.color.secondary_text)
+        color = ContextCompat.getColor(context, R.color.secondary_color)
+        val typeface = if (Build.VERSION.SDK_INT >= 28) {
+            val typefaceA = ResourcesCompat.getFont(context, R.font.main_font_family)
+            Typeface.create(typefaceA, 700, false)
+        } else {
+            ResourcesCompat.getFont(context, R.font.lemon_tuesday)
+        }
+        setTypeface(typeface)
     }
 
     private val translateXForSubtitle by lazy { imageWidth + textHorizontalPadding }

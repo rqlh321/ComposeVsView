@@ -20,7 +20,7 @@ class BannersColumn(private val viewModel: MainViewModel) : KComponent() {
         return LazyList(
             itemDecoration = SpacingDecoration(
                 big = dimenRes(R.dimen.padding).encodedValue.toInt(),
-                small = dimenRes(R.dimen.between).encodedValue.toInt()
+                small = dimenRes(R.dimen.item_spacing).encodedValue.toInt()
             ),
         ) {
             children(
@@ -53,7 +53,7 @@ class BannersColumn(private val viewModel: MainViewModel) : KComponent() {
                                     text = it.title,
                                     textSize = dimenRes(R.dimen.primary_font_size),
                                     style = Style.margin(
-                                        top = dimenRes(R.dimen.small_banner_text_between_padding),
+                                        top = dimenRes(R.dimen.small_banner_text_spacing),
                                     )
                                 )
                             )

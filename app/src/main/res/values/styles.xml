@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="my_custom_style" parent="">
+    <style name="title" parent="">
+        <item name="android:textColor">@color/primary_color</item>
         <item name="android:textSize">@dimen/primary_font_size</item>
+        <item name="android:fontFamily">@font/main_font_family</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="subtitle" parent="">
+        <item name="android:textColor">@color/secondary_color</item>
+        <item name="android:textSize">@dimen/secondary_font_size</item>
+        <item name="android:fontFamily">@font/main_font_family</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
     </style>
 </resources>
