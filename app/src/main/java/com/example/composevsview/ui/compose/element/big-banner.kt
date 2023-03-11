@@ -3,17 +3,17 @@ package com.example.composevsview.ui.compose.element
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.composevsview.R
 import com.example.composevsview.common.model.BigBanner
+import com.example.composevsview.ui.compose.them.ExtendedTheme
 
 @Preview(showBackground = true)
 @Composable
@@ -50,13 +50,13 @@ fun BigBannerCompose(item: BigBanner) {
         }
         Text(
             text = item.subtitle,
-            color = colorResource(R.color.secondary_color),
-            fontSize = dimensionResource(R.dimen.secondary_font_size).value.sp,
+            style = MaterialTheme.typography.titleSmall,
+            color = ExtendedTheme.colors.support,
         )
         Text(
             text = item.title,
-            color = colorResource(R.color.primary_color),
-            fontSize = dimensionResource(R.dimen.primary_font_size).value.sp,
+            color = ExtendedTheme.colors.main,
+            style = MaterialTheme.typography.titleLarge,
         )
     }
 }

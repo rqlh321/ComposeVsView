@@ -3,17 +3,17 @@ package com.example.composevsview.ui.compose.element
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.composevsview.R
 import com.example.composevsview.common.model.SmallBanner
+import com.example.composevsview.ui.compose.them.ExtendedTheme
 
 @Preview(showBackground = true)
 @Composable
@@ -24,7 +24,8 @@ fun SmallBannerComposePreview() {
 @Composable
 fun SmallBannerCompose(item: SmallBanner) {
     Row(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .height(dimensionResource(R.dimen.small_banner_height))
     ) {
         AsyncImage(
@@ -36,6 +37,7 @@ fun SmallBannerCompose(item: SmallBanner) {
                 .height(dimensionResource(R.dimen.small_banner_image_height))
                 .clip(RoundedCornerShape(dimensionResource(R.dimen.image_corner_radius)))
         )
+
         Column(
             modifier = Modifier
                 .padding(
@@ -45,15 +47,14 @@ fun SmallBannerCompose(item: SmallBanner) {
         ) {
             Text(
                 text = item.subtitle,
-                color = colorResource(R.color.secondary_color),
-                fontSize = dimensionResource(R.dimen.secondary_font_size).value.sp,
+                color = ExtendedTheme.colors.support,
+                style = MaterialTheme.typography.titleSmall,
             )
             Text(
-                modifier = Modifier
-                    .padding(top = dimensionResource(R.dimen.small_banner_text_spacing)),
+                modifier = Modifier.padding(top = dimensionResource(R.dimen.small_banner_text_spacing)),
                 text = item.title,
-                color = colorResource(R.color.primary_color),
-                fontSize = dimensionResource(R.dimen.primary_font_size).value.sp,
+                color = ExtendedTheme.colors.main,
+                style = MaterialTheme.typography.titleLarge,
             )
         }
     }

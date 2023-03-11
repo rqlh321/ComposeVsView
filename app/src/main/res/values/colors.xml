@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_color">#2E243B</color>
-    <color name="secondary_color">#545059</color>
-    <color name="debug_view">#32F44336</color>
+    <color name="light_100">#A1D2E8</color>
+    <color name="light_200">#A1E8C7</color>
+    <color name="light_300">#CDEBDD</color>
+    <color name="light_400">#EBB726</color>
+    <color name="half_light_100">#BD2A6F</color>
+    <color name="half_light_200">#7134BD</color>
+    <color name="half_light_300">#34BD82</color>
+    <color name="half_light_400">#4D34BD</color>
+
+    <color name="transparent_red">#32F44336</color>
 </resources>

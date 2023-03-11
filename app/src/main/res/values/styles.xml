@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="title" parent="">
-        <item name="android:textColor">@color/primary_color</item>
+    <style name="title">
+        <item name="android:textColor">?attr/primary_color</item>
         <item name="android:textSize">@dimen/primary_font_size</item>
         <item name="android:fontFamily">@font/main_font_family</item>
         <item name="android:textStyle">bold</item>
@@ -10,8 +10,8 @@
         <item name="android:lines">1</item>
     </style>
 
-    <style name="subtitle" parent="">
-        <item name="android:textColor">@color/secondary_color</item>
+    <style name="subtitle">
+        <item name="android:textColor">?attr/secondary_color</item>
         <item name="android:textSize">@dimen/secondary_font_size</item>
         <item name="android:fontFamily">@font/main_font_family</item>
         <item name="android:textStyle">italic</item>

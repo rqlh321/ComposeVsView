@@ -15,7 +15,7 @@ abstract class DesignComponent @JvmOverloads constructor(
     init {
         background = InfoDrawable(
             name = this::class.java.simpleName,
-            backgroundColor = ContextCompat.getColor(context, R.color.debug_view)
+            backgroundColor = ContextCompat.getColor(context, R.color.transparent_red)
         )
     }
 }

@@ -10,10 +10,10 @@ import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.example.composevsview.R
 import com.example.composevsview.common.DesignComponent
+import com.example.composevsview.common.color
 
 
 class SmallBannerView @JvmOverloads constructor(
@@ -48,7 +48,7 @@ class SmallBannerView @JvmOverloads constructor(
     private val titleTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         textSize = resources.getDimension(R.dimen.primary_font_size)
-        color = ContextCompat.getColor(context, R.color.primary_color)
+        color = color(R.attr.primary_color)
 
         val typeface = if (Build.VERSION.SDK_INT >= 28) {
             val typefaceA = ResourcesCompat.getFont(context, R.font.main_font_family)
@@ -75,7 +75,7 @@ class SmallBannerView @JvmOverloads constructor(
     private val subtitleTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         textSize = resources.getDimension(R.dimen.secondary_font_size)
-        color = ContextCompat.getColor(context, R.color.secondary_color)
+        color = color(R.attr.secondary_color)
         val typeface = if (Build.VERSION.SDK_INT >= 28) {
             val typefaceA = ResourcesCompat.getFont(context, R.font.main_font_family)
             Typeface.create(typefaceA, 700, false)
