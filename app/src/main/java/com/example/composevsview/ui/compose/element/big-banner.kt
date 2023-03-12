@@ -12,7 +12,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import com.example.composevsview.R
-import com.example.composevsview.common.model.BigBanner
+import com.example.composevsview.common.adapter.banner.model.BigBanner
 import com.example.composevsview.ui.compose.them.ExtendedTheme
 
 @Preview(showBackground = true)
@@ -49,11 +49,13 @@ fun BigBannerCompose(item: BigBanner) {
             )
         }
         Text(
+            maxLines = 1,
             text = item.subtitle,
-            style = MaterialTheme.typography.titleSmall,
+            style = MaterialTheme.typography.titleMedium,
             color = ExtendedTheme.colors.support,
         )
         Text(
+            maxLines = 1,
             text = item.title,
             color = ExtendedTheme.colors.main,
             style = MaterialTheme.typography.titleLarge,

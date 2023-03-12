@@ -12,7 +12,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import com.example.composevsview.R
-import com.example.composevsview.common.model.SmallBanner
+import com.example.composevsview.common.adapter.banner.model.SmallBanner
 import com.example.composevsview.ui.compose.them.ExtendedTheme
 
 @Preview(showBackground = true)
@@ -46,11 +46,13 @@ fun SmallBannerCompose(item: SmallBanner) {
                 )
         ) {
             Text(
+                maxLines = 1,
                 text = item.subtitle,
                 color = ExtendedTheme.colors.support,
-                style = MaterialTheme.typography.titleSmall,
+                style = MaterialTheme.typography.titleMedium,
             )
             Text(
+                maxLines = 1,
                 modifier = Modifier.padding(top = dimensionResource(R.dimen.small_banner_text_spacing)),
                 text = item.title,
                 color = ExtendedTheme.colors.main,

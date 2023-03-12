@@ -10,11 +10,6 @@
         android:label="@string/title_custom_view" />
 
     <fragment
-        android:id="@+id/navigation_combined"
-        android:name="com.example.composevsview.ui.combine.CombinedFragment"
-        android:label="@string/title_combined" />
-
-    <fragment
         android:id="@+id/navigation_compose"
         android:name="com.example.composevsview.ui.compose.ComposeFragment"
         android:label="@string/title_compose" />
@@ -24,8 +19,4 @@
         android:name="com.example.composevsview.ui.bind.BindFragment"
         android:label="@string/title_bind" />
 
-    <fragment
-        android:id="@+id/navigation_litho"
-        android:name="com.example.composevsview.ui.litho.LithoFragment"
-        android:label="@string/title_litho" />
 </navigation>

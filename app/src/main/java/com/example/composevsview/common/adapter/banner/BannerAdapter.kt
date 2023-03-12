@@ -1,19 +1,18 @@
-package com.example.composevsview.ui.view.adapter
+package com.example.composevsview.common.adapter.banner
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.ListAdapter
-import com.example.composevsview.common.BannerPayloadDifUtil
-import com.example.composevsview.common.model.Banner
-import com.example.composevsview.ui.view.adapter.payload.TitleChange
-import com.example.composevsview.ui.view.adapter.viewholder.BannerViewHolder
-import com.example.composevsview.ui.view.adapter.viewholder.BannerViewHolderFactory
+import com.example.composevsview.common.adapter.ViewHolderFactory
+import com.example.composevsview.common.adapter.banner.dif.BannerPayloadDifUtil
+import com.example.composevsview.common.adapter.banner.model.Banner
+import com.example.composevsview.common.adapter.banner.payload.TitleChange
 
-class BannerAdapter : ListAdapter<Banner, BannerViewHolder<Banner>>(
+class BannerAdapter constructor(
+    private val factory: ViewHolderFactory<BannerViewHolder<Banner>>
+) : ListAdapter<Banner, BannerViewHolder<Banner>>(
     AsyncDifferConfig.Builder(BannerPayloadDifUtil).build()
 ) {
-
-    private val factory = BannerViewHolderFactory()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

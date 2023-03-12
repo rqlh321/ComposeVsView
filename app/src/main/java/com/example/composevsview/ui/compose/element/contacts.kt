@@ -12,8 +12,8 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.composevsview.MainViewModel
 import com.example.composevsview.R
-import com.example.composevsview.common.model.BigBanner
-import com.example.composevsview.common.model.SmallBanner
+import com.example.composevsview.common.adapter.banner.model.BigBanner
+import com.example.composevsview.common.adapter.banner.model.SmallBanner
 
 @Composable
 fun ComposeScreen(

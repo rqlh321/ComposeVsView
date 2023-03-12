@@ -19,7 +19,7 @@ private val appFontFamily = FontFamily(
         Font(
             resId = R.font.lemon_tuesday,
             weight = FontWeight.W400,
-            style = FontStyle.Normal
+            style = FontStyle.Italic
         ),
         Font(
             resId = R.font.big_bad_robot,
@@ -34,11 +34,14 @@ val appTypography = Typography(
         fontFamily = appFontFamily,
         fontSize = 16.sp,
         fontWeight = FontWeight.Bold,
-        fontStyle = FontStyle.Normal
+        fontStyle = FontStyle.Normal,
+        letterSpacing = 0.sp,
     ),
     titleMedium = TextStyle(
         fontFamily = appFontFamily,
         fontSize = 12.sp,
-        fontStyle = FontStyle.Italic
+        fontWeight = FontWeight.Normal,
+        fontStyle = FontStyle.Italic,
+        letterSpacing = 0.sp,
     ),
 )

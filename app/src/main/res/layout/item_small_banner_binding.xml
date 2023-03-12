@@ -14,6 +14,7 @@
 
     <TextView
         android:id="@+id/subtitle"
+        style="@style/subtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/small_banner_text_horizontal_padding"
@@ -24,6 +25,7 @@
 
     <TextView
         android:id="@+id/title"
+        style="@style/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/small_banner_text_horizontal_padding"

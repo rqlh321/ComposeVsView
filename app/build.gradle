@@ -70,6 +70,7 @@ android {
 
 dependencies {
     implementation "androidx.profileinstaller:profileinstaller:1.2.2"
+
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
@@ -86,8 +87,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.14.2'
 
     //Compose
-    def composeBom = platform('androidx.compose:compose-bom:2023.01.00')
-    implementation composeBom
+    implementation platform('androidx.compose:compose-bom:2023.01.00')
     implementation 'androidx.compose.material:material'
     implementation 'androidx.compose.foundation:foundation'
     implementation 'androidx.compose.ui:ui'
@@ -97,17 +97,6 @@ dependencies {
     implementation "androidx.compose.material3:material3:1.0.1"
     implementation "androidx.compose.material3:material3-window-size-class:1.0.1"
     debugImplementation 'androidx.compose.ui:ui-tooling'
-
-    // Litho
-    implementation 'com.facebook.litho:litho-core:0.47.0'
-    implementation 'com.facebook.litho:litho-core-kotlin:0.47.0'
-    implementation 'com.facebook.litho:litho-widget:0.47.0'
-    implementation 'com.facebook.litho:litho-widget-kotlin:0.47.0'
-    implementation 'com.facebook.litho:litho-live-data-kotlin:0.47.0'
-    implementation 'com.facebook.litho:litho-fresco:0.47.0'
-    implementation 'com.facebook.fresco:fresco:1.13.0'
-    implementation 'com.facebook.soloader:soloader:0.10.4'
-    kapt 'com.facebook.litho:litho-processor:0.47.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

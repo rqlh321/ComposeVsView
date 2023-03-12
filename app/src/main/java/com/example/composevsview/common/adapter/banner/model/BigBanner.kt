@@ -1,4 +1,4 @@
-package com.example.composevsview.common.model
+package com.example.composevsview.common.adapter.banner.model
 
 import java.util.*
 

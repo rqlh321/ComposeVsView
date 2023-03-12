@@ -1,8 +1,8 @@
-package com.example.composevsview.common
+package com.example.composevsview.common.adapter.banner.dif
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.composevsview.common.model.Banner
-import com.example.composevsview.ui.view.adapter.payload.TitleChange
+import com.example.composevsview.common.adapter.banner.model.Banner
+import com.example.composevsview.common.adapter.banner.payload.TitleChange
 
 object BannerPayloadDifUtil : DiffUtil.ItemCallback<Banner>() {
 

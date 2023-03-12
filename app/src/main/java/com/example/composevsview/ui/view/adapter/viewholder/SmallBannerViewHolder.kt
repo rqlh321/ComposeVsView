@@ -1,7 +1,8 @@
 package com.example.composevsview.ui.view.adapter.viewholder
 
 import com.bumptech.glide.Glide
-import com.example.composevsview.common.model.SmallBanner
+import com.example.composevsview.common.adapter.banner.BannerViewHolder
+import com.example.composevsview.common.adapter.banner.model.SmallBanner
 import com.example.composevsview.ui.view.SmallBannerBitmapTarget
 import com.example.composevsview.ui.view.banner.SmallBannerView
 

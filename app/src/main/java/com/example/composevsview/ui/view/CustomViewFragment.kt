@@ -10,12 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.composevsview.MainViewModel
 import com.example.composevsview.R
-import com.example.composevsview.ui.view.adapter.BannerAdapter
 import com.example.composevsview.common.SpacingDecoration
+import com.example.composevsview.common.adapter.banner.BannerAdapter
+import com.example.composevsview.ui.view.adapter.CustomBannerViewHolderFactory
 
 class CustomViewFragment : Fragment() {
 
-    private val bannerAdapter = BannerAdapter()
+    private val bannerAdapter = BannerAdapter(CustomBannerViewHolderFactory())
 
     override fun onCreateView(
         inflater: LayoutInflater,
