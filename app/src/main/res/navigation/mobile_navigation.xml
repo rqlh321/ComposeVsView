@@ -15,8 +15,12 @@
         android:label="@string/title_compose" />
 
     <fragment
-        android:id="@+id/navigation_bind"
-        android:name="com.example.composevsview.ui.bind.BindFragment"
-        android:label="@string/title_bind" />
+        android:id="@+id/navigation_view_bind"
+        android:name="com.example.composevsview.ui.viewbinding.ViewBindingFragment"
+        android:label="@string/title_view_bind" />
 
+    <fragment
+        android:id="@+id/navigation_data_bind"
+        android:name="com.example.composevsview.ui.databinding.DataBindFragment"
+        android:label="@string/title_data_bind" />
 </navigation>

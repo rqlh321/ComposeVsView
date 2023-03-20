@@ -1,5 +1,6 @@
 package com.example.composevsview.common.adapter.banner.model
 
+import com.example.composevsview.R
 import java.util.*
 
 data class SmallBanner(
@@ -9,4 +10,6 @@ data class SmallBanner(
     val iconUrl: String = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png",
 ) : Banner() {
     override fun viewType() = SMALL_BANNER_VIEW_TYPE
+    override fun layout() = R.layout.item_data_binding_small_banner
+
 }

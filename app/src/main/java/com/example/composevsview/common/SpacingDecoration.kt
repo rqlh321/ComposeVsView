@@ -1,13 +1,15 @@
 package com.example.composevsview.common
 
+import android.content.Context
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.composevsview.R
 
-class SpacingDecoration(
-    private val small: Int,
-    private val big: Int,
-) : RecyclerView.ItemDecoration() {
+class SpacingDecoration(context: Context) : RecyclerView.ItemDecoration() {
+
+    private val big = context.resources.getDimensionPixelOffset(R.dimen.padding)
+    private val small = context.resources.getDimensionPixelOffset(R.dimen.item_spacing)
 
     private val left = big
     private val right = big

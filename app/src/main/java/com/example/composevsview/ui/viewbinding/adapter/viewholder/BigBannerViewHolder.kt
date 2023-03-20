@@ -1,12 +1,12 @@
-package com.example.composevsview.ui.bind.adapter.viewholder
+package com.example.composevsview.ui.viewbinding.adapter.viewholder
 
 import com.bumptech.glide.Glide
 import com.example.composevsview.common.adapter.banner.BannerViewHolder
 import com.example.composevsview.common.adapter.banner.model.BigBanner
-import com.example.composevsview.databinding.ItemBigBannerBindingBinding
+import com.example.composevsview.databinding.ItemViewBindingBigBannerBinding
 
 class BigBannerViewHolder(
-    private val binding: ItemBigBannerBindingBinding
+    private val binding: ItemViewBindingBigBannerBinding
 ) : BannerViewHolder<BigBanner>(binding.root) {
 
     override fun bind(item: BigBanner) {

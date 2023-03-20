@@ -1,12 +1,10 @@
 package com.example.composevsview.common.adapter.banner.model
 
-abstract class Banner {
-    abstract val id: String
+import com.example.composevsview.common.adapter.ListItem
+
+abstract class Banner : ListItem() {
+    abstract override val id: String
     abstract val title: String
-
-    override fun equals(other: Any?) = super.equals(other)
-
-    override fun hashCode() = super.hashCode()
 
     abstract fun viewType(): Int
 

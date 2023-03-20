@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_custom_view,
                 R.id.navigation_compose,
-                R.id.navigation_bind,
+                R.id.navigation_view_bind,
+                R.id.navigation_data_bind,
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

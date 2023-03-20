@@ -1,4 +1,4 @@
-package com.example.composevsview.ui.bind.adapter
+package com.example.composevsview.ui.viewbinding.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,10 +7,10 @@ import com.example.composevsview.common.adapter.banner.BannerViewHolder
 import com.example.composevsview.common.adapter.banner.model.Banner
 import com.example.composevsview.common.adapter.banner.model.Banner.Companion.BIG_BANNER_VIEW_TYPE
 import com.example.composevsview.common.adapter.banner.model.Banner.Companion.SMALL_BANNER_VIEW_TYPE
-import com.example.composevsview.databinding.ItemBigBannerBindingBinding
-import com.example.composevsview.databinding.ItemSmallBannerBindingBinding
-import com.example.composevsview.ui.bind.adapter.viewholder.BigBannerViewHolder
-import com.example.composevsview.ui.bind.adapter.viewholder.SmallBannerViewHolder
+import com.example.composevsview.databinding.ItemViewBindingBigBannerBinding
+import com.example.composevsview.databinding.ItemViewBindingSmallBannerBinding
+import com.example.composevsview.ui.viewbinding.adapter.viewholder.BigBannerViewHolder
+import com.example.composevsview.ui.viewbinding.adapter.viewholder.SmallBannerViewHolder
 
 class BindBannerViewHolderFactory : ViewHolderFactory<BannerViewHolder<Banner>>() {
 
@@ -19,14 +19,14 @@ class BindBannerViewHolderFactory : ViewHolderFactory<BannerViewHolder<Banner>>(
         viewType: Int
     ): BannerViewHolder<Banner> = when (viewType) {
         BIG_BANNER_VIEW_TYPE -> BigBannerViewHolder(
-            ItemBigBannerBindingBinding.inflate(
+            ItemViewBindingBigBannerBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
         )
         SMALL_BANNER_VIEW_TYPE -> SmallBannerViewHolder(
-            ItemSmallBannerBindingBinding.inflate(
+            ItemViewBindingSmallBannerBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.example.composevsview.common.adapter.banner.model.SmallBanner" />
+
+        <variable
+            name="item"
+            type="SmallBanner" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/small_banner_height">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/small_banner_image_width"
+            android:layout_height="@dimen/small_banner_height"
+            android:imageUrl="@{item.iconUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            style="@style/subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/small_banner_text_horizontal_padding"
+            android:layout_marginTop="@dimen/small_banner_text_vertical_padding"
+            android:text="@{item.subtitle}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/small_banner_text_horizontal_padding"
+            android:layout_marginTop="@dimen/small_banner_text_spacing"
+            android:layout_marginBottom="@dimen/small_banner_text_vertical_padding"
+            android:text="@{item.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

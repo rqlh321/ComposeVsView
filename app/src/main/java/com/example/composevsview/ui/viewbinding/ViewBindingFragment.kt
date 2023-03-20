@@ -1,4 +1,4 @@
-package com.example.composevsview.ui.bind
+package com.example.composevsview.ui.viewbinding
 
 import android.os.Bundle
 import android.view.View
@@ -8,18 +8,16 @@ import com.example.composevsview.MainViewModel
 import com.example.composevsview.R
 import com.example.composevsview.common.SpacingDecoration
 import com.example.composevsview.common.adapter.banner.BannerAdapter
-import com.example.composevsview.databinding.FragmentBindBinding
-import com.example.composevsview.ui.bind.adapter.BindBannerViewHolderFactory
+import com.example.composevsview.databinding.FragmentViewBindingBinding
+import com.example.composevsview.ui.viewbinding.adapter.BindBannerViewHolderFactory
 
-class BindFragment : Fragment(R.layout.fragment_bind) {
+class ViewBindingFragment : Fragment(R.layout.fragment_view_binding) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val binding = FragmentBindBinding.bind(view)
+        val binding = FragmentViewBindingBinding.bind(view)
         val bannerAdapter = BannerAdapter(BindBannerViewHolderFactory())
         binding.root.adapter = bannerAdapter
-        val big = resources.getDimensionPixelOffset(R.dimen.padding)
-        val small = resources.getDimensionPixelOffset(R.dimen.item_spacing)
-        binding.root.addItemDecoration(SpacingDecoration(small = small, big = big))
+        binding.root.addItemDecoration(SpacingDecoration(requireContext()))
 
         val mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         mainViewModel.banners.observe(viewLifecycleOwner, bannerAdapter::submitList)

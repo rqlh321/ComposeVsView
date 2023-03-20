@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">ComposeVsView</string>
     <string name="title_custom_view">Custom View</string>
-    <string name="title_combined">Compose in Recycler</string>
     <string name="title_compose">Compose</string>
-    <string name="title_bind">Bind View</string>
-    <string name="title_litho">Litho</string>
+    <string name="title_view_bind">View Bind</string>
+    <string name="title_data_bind">Data Bind</string>
 </resources>
